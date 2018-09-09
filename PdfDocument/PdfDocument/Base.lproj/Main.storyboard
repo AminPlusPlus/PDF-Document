@@ -22,12 +22,40 @@
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view hidden="YES" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixf-OL-xGT" customClass="SignatureView" customModule="PdfDocument" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKB-PK-ulI">
+                                        <rect key="frame" x="30" y="617" width="315" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="qbc-Ae-MLE"/>
+                                        </constraints>
+                                        <state key="normal" title="Clean">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="Clean" destination="BYZ-38-t0r" eventType="touchUpInside" id="4d9-Zj-5vZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="kKB-PK-ulI" firstAttribute="leading" secondItem="ixf-OL-xGT" secondAttribute="leading" constant="30" id="Gja-vH-Gfz"/>
+                                    <constraint firstAttribute="trailing" secondItem="kKB-PK-ulI" secondAttribute="trailing" constant="30" id="PmB-7P-s3V"/>
+                                    <constraint firstAttribute="bottom" secondItem="kKB-PK-ulI" secondAttribute="bottom" constant="10" id="tWY-Zx-taz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ixf-OL-xGT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="2NC-af-2h9"/>
                             <constraint firstItem="QI5-A2-Jsb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="6ge-EQ-YeO"/>
+                            <constraint firstItem="ixf-OL-xGT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="C9m-U9-sMm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QI5-A2-Jsb" secondAttribute="bottom" id="DfQ-XT-zSx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ixf-OL-xGT" secondAttribute="bottom" id="KOB-kT-7ft"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QI5-A2-Jsb" secondAttribute="trailing" id="cMA-fA-7Ng"/>
+                            <constraint firstItem="ixf-OL-xGT" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ppH-zt-4K2"/>
                             <constraint firstItem="QI5-A2-Jsb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="uwZ-pl-d7d"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -35,33 +63,18 @@
                     <navigationItem key="navigationItem" id="ffw-m2-msK">
                         <barButtonItem key="rightBarButtonItem" title="add Signature" id="o1B-Mn-fUw">
                             <connections>
-                                <segue destination="9Yw-R1-2BP" kind="push" id="j1E-Po-smx"/>
+                                <action selector="addSignature:" destination="BYZ-38-t0r" id="9e5-Ma-Yhj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="pdfView" destination="QI5-A2-Jsb" id="qfv-XH-vaW"/>
+                        <outlet property="signatureView" destination="ixf-OL-xGT" id="o4I-Gt-foB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1956" y="157.87106446776613"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="O5I-vG-7mC">
-            <objects>
-                <viewController id="9Yw-R1-2BP" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="rAc-Zj-L3W" customClass="SignatureView" customModule="PdfDocument" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="wO9-7S-UML"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="T26-gy-The"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="miA-cJ-PmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2687" y="194"/>
+            <point key="canvasLocation" x="1860" y="157.87106446776613"/>
         </scene>
         <!--Documents-->
         <scene sceneID="okm-km-a5g">

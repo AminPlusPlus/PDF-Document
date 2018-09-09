@@ -15,6 +15,7 @@ class PDFViewVC: UIViewController
     var document : Document?
     
     @IBOutlet weak var pdfView : PDFView!
+    @IBOutlet weak var signatureView : SignatureView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,25 @@ class PDFViewVC: UIViewController
         //title
         navigationItem.title = document!.title
     }
+    
+    
+    @IBAction func addSignature (_ sender : UIBarButtonItem )
+    {
+        if sender.title == "add Signature"
+        {
+            signatureView.isHidden = false
+            sender.title = "add to document"
+        } else
+        {
+            signatureView.isHidden = true
+            sender.title = "add Signature"
+        }
+    }
 
+    @IBAction func Clean()
+    {
+        signatureView.cleanSignature()
+    }
     
 
 }

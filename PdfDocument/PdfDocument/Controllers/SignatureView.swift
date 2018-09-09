@@ -63,5 +63,6 @@ class SignatureView: UIView {
         self.layer.sublayers = nil
         self.setNeedsDisplay()
     }
+    
 
 }
